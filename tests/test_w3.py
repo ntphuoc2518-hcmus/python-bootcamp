@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 BOOTCAMP = Path(__file__).resolve().parents[1]
-TODAY = date(2026, 10, 6)   # a Tuesday
+TODAY = date(2026, 10, 6)  # a Tuesday
 
 
 def test_w3_1_parse_due(load):
@@ -15,7 +15,7 @@ def test_w3_1_parse_due(load):
     assert d.parse_due("tomorrow", TODAY) == date(2026, 10, 7)
     assert d.parse_due("in 3 days", TODAY) == date(2026, 10, 9)
     assert d.parse_due("Fri", TODAY) == date(2026, 10, 9)
-    assert d.parse_due("Tue", TODAY) == date(2026, 10, 13)   # next occurrence, not today
+    assert d.parse_due("Tue", TODAY) == date(2026, 10, 13)  # next occurrence, not today
     with pytest.raises(ValueError):
         d.parse_due("someday", TODAY)
 
@@ -30,9 +30,35 @@ def test_w3_2_log_stats(load):
 
 
 def test_w3_3_cli(member):
-    ok = subprocess.run([sys.executable, "-m", f"members.{member}.w3.cli", str(BOOTCAMP / "samples" / "tasks.csv"),
-                         "--hours", "2", "--today", "2026-10-26"], capture_output=True, text=True, cwd=BOOTCAMP, check=False)
+    ok = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            f"members.{member}.w3.cli",
+            str(BOOTCAMP / "samples" / "tasks.csv"),
+            "--hours",
+            "2",
+            "--today",
+            "2026-10-26",
+        ],
+        capture_output=True,
+        text=True,
+        cwd=BOOTCAMP,
+        check=False,
+    )
     assert ok.returncode == 0 and "Assignment" in ok.stdout
-    bad = subprocess.run([sys.executable, "-m", f"members.{member}.w3.cli", "missing.csv", "--hours", "2"],
-                         capture_output=True, text=True, cwd=BOOTCAMP, check=False)
+    bad = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            f"members.{member}.w3.cli",
+            "missing.csv",
+            "--hours",
+            "2",
+        ],
+        capture_output=True,
+        text=True,
+        cwd=BOOTCAMP,
+        check=False,
+    )
     assert bad.returncode == 1

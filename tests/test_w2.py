@@ -31,9 +31,12 @@ def test_w2_2_load_and_save(load, tmp_path):
 def test_w2_3_infeasible(load):
     e = load("w2", "errors")
     m = load("w2", "models")
-    tasks = [m.Task("a", 3, 6, date(2026, 10, 30)), m.Task("b", 3, 4, date(2026, 10, 30))]
+    tasks = [
+        m.Task("a", 3, 6, date(2026, 10, 30)),
+        m.Task("b", 3, 4, date(2026, 10, 30)),
+    ]
     with pytest.raises(e.InfeasiblePlan) as exc:
         e.check_feasible(tasks, 2)
     assert exc.value.needed_h == 10 and exc.value.available_h == 2
     assert "10" in str(exc.value)
-    e.check_feasible(tasks, 12)   # no exception
+    e.check_feasible(tasks, 12)  # no exception

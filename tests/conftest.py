@@ -3,6 +3,7 @@
 Usage:
     pytest -q python-bootcamp/tests/test_w1.py --member minh_nv --variant 1
 """
+
 import importlib
 import sys
 from pathlib import Path
@@ -15,8 +16,15 @@ if str(BOOTCAMP) not in sys.path:
 
 
 def pytest_addoption(parser):
-    parser.addoption("--member", action="store", default=None, help="your folder under members/, e.g. minh_nv")
-    parser.addoption("--variant", action="store", default="1", help="your member number 1-4 (W1-4)")
+    parser.addoption(
+        "--member",
+        action="store",
+        default=None,
+        help="your folder under members/, e.g. minh_nv",
+    )
+    parser.addoption(
+        "--variant", action="store", default="1", help="your member number 1-4 (W1-4)"
+    )
 
 
 @pytest.fixture
@@ -36,4 +44,5 @@ def variant(request):
 def load(member):
     def _load(week: str, module: str):
         return importlib.import_module(f"members.{member}.{week}.{module}")
+
     return _load
