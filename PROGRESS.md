@@ -7,4 +7,4 @@
 | tinhha777qz-dev   | W1   |       |    |          |       |       |
 | qmtu2520-fit-clc  | W1   |       |    |          |       |       |
 | pqminh2007        | W1   |       |    |          |       |       |
-| NguyenTheHungCLC  | W1   |       |    |          |       |       |
+| NguyenTheHungCLC | W1 | #14 | #11 | pqminh2007 | 5/5 | 2 |
