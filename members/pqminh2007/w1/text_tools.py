@@ -1,11 +1,13 @@
 import re
 from collections import Counter
 
+
 def word_count(text):
     if not text:
         return {}
-    words = re.findall(r'\b\w+\b', text.lower())
+    words = re.findall(r"\b\w+\b", text.lower())
     return dict(Counter(words))
+
 
 def top_k(text, k):
     counts = word_count(text)

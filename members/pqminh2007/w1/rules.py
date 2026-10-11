@@ -1,6 +1,7 @@
 def can_register_thesis(credits, gpa):
     return credits >= 120 and gpa >= 2.0
 
+
 def missing(credits, gpa):
     reasons = []
     if credits < 120:
