@@ -1,6 +1,6 @@
 # Sieve of Eratosthenes
 def primes_up_to(n: int) -> list[int]:
-    """Unlike C++, Python can use a list of booleans to mark primes."""
+    """Translating C++ functions to Pythonic implementations."""
     if n < 2:
         return []
 
