@@ -1,21 +1,22 @@
 import csv
 import json
 from datetime import date
-from pathlib import Path
 
 from .models import Task
 
 
-def load_tasks(path: str) -> list[Task]:
+def load_tasks(path) -> list[Task]:
     tasks = []
 
     with open(path, "r", newline="", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
-        required_columns = {"title", "importance", "effort_h", "deadline"}
+        required_columns = ["title", "importance", "effort_h", "deadline"]
 
-        if not required_columns.issubset(reader.fieldnames or []):
-            raise ValueError("CSV is missing required columns")
+        if reader.fieldnames != required_columns:
+            raise ValueError(
+                "CSV header must be: title,importance,effort_h,deadline"
+            )
 
         for line_number, row in enumerate(reader, start=2):
             try:
@@ -29,13 +30,13 @@ def load_tasks(path: str) -> list[Task]:
 
             except (ValueError, TypeError, KeyError) as error:
                 raise ValueError(
-                    f"Invalid data at line {line_number}: {error}"
+                    f"Invalid data on line {line_number}: {error}"
                 ) from error
 
     return tasks
 
 
-def save_json(tasks: list[Task], path: str) -> None:
+def save_json(tasks, path) -> None:
     data = []
 
     for task in tasks:
