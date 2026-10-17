@@ -16,19 +16,19 @@ class Task:
             raise ValueError("Title must not be empty.")
 
         if not isinstance(self.importance, int) or isinstance(self.importance, bool):
-            raise ValueError("Importance must be an integer.")
+            raise TypeError("Importance must be an integer.")
 
         if not 1 <= self.importance <= 5:
             raise ValueError("Importance must be between 1 and 5.")
 
         if not isinstance(self.effort_h, (int, float)) or isinstance(self.effort_h, bool):
-            raise ValueError("Effort must be a number.")
+            raise TypeError("Effort must be a number.")
 
         if self.effort_h <= 0:
             raise ValueError("Effort must be greater than 0.")
 
         if not isinstance(self.deadline, date):
-            raise ValueError("Deadline must be a date.")
+            raise TypeError("Deadline must be a date.")
 
     def days_left(self, today: date) -> int:
         """Return days until the deadline, never below zero."""
