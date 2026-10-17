@@ -1,6 +1,4 @@
 # __main__.py
-import sys
-from .io_utils import load_tasks
 
 def main():
     print("Running W2 package test...")

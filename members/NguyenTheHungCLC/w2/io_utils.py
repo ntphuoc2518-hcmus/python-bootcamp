@@ -1,7 +1,9 @@
 import csv
 import json
-from datetime import datetime, date
+from datetime import datetime
+
 from .models import Task
+
 
 def load_tasks(path: str) -> list[Task]:
     tasks = []
@@ -14,7 +16,7 @@ def load_tasks(path: str) -> list[Task]:
                 effort_h = float(row["effort_h"])
                 deadline = datetime.strptime(row["deadline"].strip(), "%Y-%m-%d").date()
                 tasks.append(Task(title, importance, effort_h, deadline))
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001
                 raise ValueError(f"Error on line {line_num}: {e}")
     return tasks
 

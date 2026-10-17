@@ -1,4 +1,5 @@
-from shared.contract import Task, Block
+from shared.contract import Block, Task
+
 
 def allocate(tasks: list[Task], hours: float) -> list[Block]:
     """Phân bổ thời gian khả dụng cho danh sách công việc theo thuật toán Greedy."""

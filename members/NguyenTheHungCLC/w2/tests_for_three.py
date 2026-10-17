@@ -1,6 +1,6 @@
-import pytest
 # Giả sử hàm W1-3 nằm ở module rules của bạn hoặc của đồng đội
 from members.NguyenTheHungCLC.w1.rules import can_register_thesis, missing
+
 
 def test_can_register_thesis_eligible():
     assert can_register_thesis(credits=120, gpa=2.0) is True
