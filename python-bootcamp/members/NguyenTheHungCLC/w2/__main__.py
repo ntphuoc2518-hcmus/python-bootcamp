@@ -1,0 +1,12 @@
+# __main__.py
+import sys
+from .io_utils import load_tasks
+
+def main():
+    print("Running W2 package test...")
+    # Có thể load file mẫu nếu có:
+    # tasks = load_tasks("samples/tasks.csv")
+    # print(tasks)
+
+if __name__ == "__main__":
+    main()
