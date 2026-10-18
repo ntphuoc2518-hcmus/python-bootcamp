@@ -1,0 +1,14 @@
+[
+  {
+    "title": "DS exam",
+    "priority": 5,
+    "work_hours": 6.0,
+    "deadline": "2026-10-30"
+  },
+  {
+    "title": "Assignment",
+    "priority": 3,
+    "work_hours": 4.0,
+    "deadline": "2026-11-05"
+  }
+]
