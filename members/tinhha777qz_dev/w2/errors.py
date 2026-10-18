@@ -1,6 +1,6 @@
 """W2-3 Custom exception and feasibility checking."""
 
-from typing import Sequence
+from collections.abc import Sequence
 
 from .models import Task
 
@@ -12,7 +12,8 @@ class InfeasiblePlan(Exception):
         self.needed_h = needed_h
         self.available_h = available_h
         super().__init__(
-            f"Infeasible plan: needed {needed_h} hours, but only {available_h} hours are available."
+            f"Infeasible plan: needed {needed_h} hours, "
+            f"but only {available_h} hours are available.",
         )
 
 
