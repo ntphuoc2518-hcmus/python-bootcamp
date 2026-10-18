@@ -1,7 +1,7 @@
 from datetime import date
 from types import SimpleNamespace
 
-from render import render
+from shared.study_planner.render import render
 
 
 def test_render_normal():
