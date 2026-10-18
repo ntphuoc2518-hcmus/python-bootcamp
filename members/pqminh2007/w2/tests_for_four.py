@@ -1,4 +1,3 @@
-import pytest
 from members.pqminh2007.w1.translate import linear_search
 
 
