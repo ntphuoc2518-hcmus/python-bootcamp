@@ -1,7 +1,7 @@
 from datetime import date
 
+from .errors import InfeasiblePlan, check_feasible
 from .models import Task
-from .errors import check_feasible, InfeasiblePlan
 
 
 tasks = [
