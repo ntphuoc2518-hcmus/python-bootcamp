@@ -4,8 +4,8 @@ Part of team assignment T-W2.
 Calculates priority using the formula: importance / max(days_left, 1)
 """
 
+from collections.abc import Sequence
 from datetime import date
-from typing import Sequence
 
 from shared.contract import Task
 
