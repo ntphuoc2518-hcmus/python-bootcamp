@@ -1,5 +1,6 @@
 from shared.contract import Block, Task
 
+
 def allocate(tasks: list[Task], hours: float) -> list[Block]:
     """
     Phân bổ quỹ thời gian (hours) cho danh sách công việc theo chiến lược Greedy.
