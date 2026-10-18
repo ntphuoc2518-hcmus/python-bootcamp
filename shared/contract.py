@@ -5,7 +5,7 @@ from datetime import date
 @dataclass
 class Task:
     title: str
-    importance: int
+    importance: int  # 1-5
     effort_h: float
     deadline: date
 
