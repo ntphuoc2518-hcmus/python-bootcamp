@@ -4,7 +4,6 @@ import calendar
 import re
 from datetime import date, timedelta
 
-
 _WEEKDAYS: dict[str, int] = {
     alias: index
     for index, name in enumerate(calendar.day_name)
