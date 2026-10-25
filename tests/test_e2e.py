@@ -1,11 +1,13 @@
 from datetime import date
 from pathlib import Path
+
+from shared.study_planner.allocate import allocate
 from shared.study_planner.parse import parse_csv
 from shared.study_planner.prioritise import prioritise
-from shared.study_planner.allocate import allocate
 from shared.study_planner.render import render
 
 BOOTCAMP = Path(__file__).resolve().parents[1]
+
 
 def test_study_planner_e2e() -> None:
     """End-to-end test for the study planner workflow using the existing sample CSV."""
