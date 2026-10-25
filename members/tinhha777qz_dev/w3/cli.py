@@ -4,9 +4,9 @@ Prioritises tasks from a CSV file and allocates study time for tonight.
 """
 
 import argparse
+import sys
 from datetime import date
 from pathlib import Path
-import sys
 
 from members.tinhha777qz_dev.w2.io_utils import load_tasks
 from members.tinhha777qz_dev.w2.models import Task
@@ -100,7 +100,7 @@ def main() -> None:
 
     try:
         tasks = load_tasks(csv_file)
-    except Exception as exc:
+    except (ValueError, OSError) as exc:
         print(f"Error reading tasks: {exc}", file=sys.stderr)
         sys.exit(1)
 

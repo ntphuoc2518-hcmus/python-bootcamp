@@ -1,9 +1,9 @@
 """Unit and integration tests for shared/study_planner/__main__.py."""
 
-from datetime import date
-from pathlib import Path
 import subprocess
 import sys
+from datetime import date
+from pathlib import Path
 
 import pytest
 

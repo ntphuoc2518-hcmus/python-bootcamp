@@ -6,9 +6,9 @@ Usage:
 """
 
 import argparse
+import sys
 from datetime import date
 from pathlib import Path
-import sys
 
 from shared.study_planner.allocate import allocate
 from shared.study_planner.parse import parse_csv
@@ -91,7 +91,7 @@ def main(argv: list[str] | None = None) -> None:
     try:
         output = run_pipeline(args.file, args.hours, reference_date=today)
         print(output)
-    except Exception as exc:
+    except (ValueError, OSError) as exc:
         print(f"Error: {exc}", file=sys.stderr)
         sys.exit(1)
 

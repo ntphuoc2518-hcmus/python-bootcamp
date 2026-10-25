@@ -3,8 +3,8 @@
 Provides natural language and ISO date parsing for study task deadlines.
 """
 
-from datetime import date, timedelta
 import re
+from datetime import date, timedelta
 
 _WEEKDAYS = {
     "mon": 0,

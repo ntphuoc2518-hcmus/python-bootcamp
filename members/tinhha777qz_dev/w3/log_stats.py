@@ -3,9 +3,9 @@
 Computes request counts, p95 latencies, and identifies the slowest route.
 """
 
+import math
 from collections import Counter, defaultdict
 from collections.abc import Sequence
-import math
 from typing import Any
 
 
