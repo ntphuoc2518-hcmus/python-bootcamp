@@ -1,9 +1,21 @@
+
+"""Utilities for analysing request counts and response latency."""
+
 from collections import Counter, defaultdict
 from math import ceil
+from typing import TypedDict
 
 
-def analyse(pairs: list[tuple[str, float]]) -> dict:
-    """Count requests and calculate the p95 latency for each route."""
+class AnalysisResult(TypedDict):
+    """Describe the structure of the request analysis result."""
+
+    counts: dict[str, int]
+    p95: dict[str, float]
+    slowest: str | None
+
+
+def analyse(pairs: list[tuple[str, float]]) -> AnalysisResult:
+    """Count requests and calculate p95 latency for each route."""
     counts = Counter()
     latencies = defaultdict(list)
 
