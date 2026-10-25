@@ -1,3 +1,4 @@
+# noqa: N999
 # __main__.py
 
 def main():
@@ -8,3 +9,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
