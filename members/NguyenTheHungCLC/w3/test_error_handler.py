@@ -1,4 +1,5 @@
 import pytest
+
 from members.NguyenTheHungCLC.w3.error_handler import (
     InfeasiblePlanError,
     handle_planner_errors,

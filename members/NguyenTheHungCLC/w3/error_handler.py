@@ -5,7 +5,6 @@ from typing import NoReturn
 class InfeasiblePlanError(Exception):
     """Ngoại lệ khi kế hoạch học tập không khả thi."""
 
-    pass
 
 
 def handle_planner_errors(file_path_str: str) -> Path:
